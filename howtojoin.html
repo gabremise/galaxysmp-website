@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalaxySMP | Comment rejoindre ?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets/galaxy.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <a href="/" class="hover-underline-animation menu-element">Accueil</a>
+        <a href="/howtojoin.html" class="hover-underline-animation menu-element">Comment rejoindre ?</a>
+        <a href="https://discord.gg/S2wEps9kUZ" target="_blank" class="menu-element">
+            <img src="assets/discord.png" class="logo-menu">
+        </a>
+    </div>
+    <div class="container">
+        <h1 class="howtojoin-title">
+            Comment rejoindre le <span class="galaxysmp-gradient">GalaxySMP</span> ?
+        </h1>
+        <div class="howtojoin-container">
+            <div class="howtojoin-box">
+                <h2>Nom du serveur</h2>
+                <div class="howtojoin-box-text" id="copyBtn">
+                    GalaxySMP
+                    <img src="/assets/copy.svg" class="copy-svg" id="copyIcon">
+                </div>
+                <h2>Adresse</h2>
+                <div class="howtojoin-box-text" id="copyBtn2">
+                    galaxysmp.ovh
+                    <img src="/assets/copy.svg" class="copy-svg" id="copyIcon2">
+                </div>
+                    <script>
+                        const copyBtn = document.getElementById('copyBtn');
+                        const copyIcon = document.getElementById('copyIcon');
+
+                        copyBtn.addEventListener('click', () => {
+                            navigator.clipboard.writeText(copyBtn.innerText.trim()).then(() => {
+                                copyIcon.src = "/assets/check.svg";
+                                copyBtn.style.pointerEvents = "none";
+                                setTimeout(() => {
+                                    copyIcon.src = "/assets/copy.svg";
+                                    copyBtn.style.pointerEvents = "auto";
+                                }, 1000);
+                            });
+                        });
+                        const copyBtn2 = document.getElementById('copyBtn2');
+                        const copyIcon2 = document.getElementById('copyIcon2');
+
+                        copyBtn2.addEventListener('click', () => {
+                            navigator.clipboard.writeText(copyBtn2.innerText.trim()).then(() => {
+                                copyIcon2.src = "/assets/check.svg";
+                                copyBtn2.style.pointerEvents = "none";
+
+                                setTimeout(() => {
+                                    copyIcon2.src = "/assets/copy.svg";
+                                    copyBtn2.style.pointerEvents = "auto";
+                                }, 1000);
+                            });
+                        });
+                    </script>
+                    <div class="howtojoin-warning">
+                        <img src="/assets/warning.svg" width="30px">
+                        <span style="margin-left: 10px;">Attention, vous devez lier votre compte Discord à Minecraft pour pouvoir rejoindre le serveur</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
