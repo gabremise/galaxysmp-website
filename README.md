@@ -1,1 +1,1 @@
-# galaxysmp-website
+Flemme de faire un README
