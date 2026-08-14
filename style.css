@@ -72,6 +72,10 @@ a {
     color: #fff;
 }
 
+.footer-element {
+    margin: 0 5vw 0 5vw;
+}
+
 .logo-menu {
     margin-top: 6px;
     width: 30px;
