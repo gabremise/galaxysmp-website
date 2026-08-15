@@ -15,3 +15,27 @@ document.querySelector('.down-arrow-container').addEventListener('click', () => 
     behavior: 'smooth'
   });
 });
+
+(function () {
+  function handleScroll() {
+    const threshold = window.innerHeight;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY >= threshold) {
+      document.body.classList.add('scroll');
+    }
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', handleScroll);
+})();
