@@ -15,27 +15,17 @@ document.querySelector('.down-arrow-container').addEventListener('click', () => 
     behavior: 'smooth'
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const titleEl1 = document.querySelector(".presentation-1");
+  const titleEl2 = document.querySelector(".presentation-2");
+  const titleEl3 = document.querySelector(".presentation-3");
 
-(function () {
-  function handleScroll() {
-    const threshold = window.innerHeight;
-    const scrollY = window.scrollY || window.pageYOffset;
-
-    if (scrollY >= threshold) {
-      document.body.classList.add('scroll');
-    }
-  }
-
-  let ticking = false;
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        handleScroll();
-        ticking = false;
-      });
-      ticking = true;
+    if (window.scrollY >= window.innerHeight * 0.6) {
+      titleEl1.classList.add('presentation-scrolled');
+    }
+    else if (window.scrollY <= window.innerHeight * 0.01) {
+      titleEl1.classList.remove('presentation-scrolled');
     }
   });
-
-  document.addEventListener('DOMContentLoaded', handleScroll);
-})();
+});
