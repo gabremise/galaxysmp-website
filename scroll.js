@@ -11,7 +11,7 @@ window.addEventListener('scroll', () => {
 });
 document.querySelector('.down-arrow-container').addEventListener('click', () => {
   window.scrollBy({
-    top: window.innerHeight * 0.9,
+    top: window.innerHeight * 0.6,
     behavior: 'smooth'
   });
 });
@@ -21,11 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const titleEl3 = document.querySelector(".presentation-3");
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY >= window.innerHeight * 0.6) {
+    if (window.scrollY >= 200) {
       titleEl1.classList.add('presentation-scrolled');
     }
-    else if (window.scrollY <= window.innerHeight * 0.01) {
+    if (window.scrollY >= window.innerHeight * 0.3 + 200) {
+      titleEl2.classList.add('presentation-scrolled');
+    }
+    if (window.scrollY <= window.innerHeight * 0.01) {
       titleEl1.classList.remove('presentation-scrolled');
+      titleEl2.classList.remove('presentation-scrolled');
+      titleEl3.classList.remove('presentation-scrolled');
     }
   });
 });
